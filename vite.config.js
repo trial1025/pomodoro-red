@@ -54,9 +54,9 @@ export default defineConfig({
         name: '番茄鐘',
         short_name: '番茄鐘',
         // 工具列顏色
-        theme_color: '#1867C0',
+        theme_color: '#BA4949',
         // 啟動畫面的背景色
-        background_color: '#1867C0',
+        background_color: '#BA4949',
         // 啟動網址
         start_url: './',
         // PWA 顯示範圍，超出範圍會啟動瀏覽器
@@ -65,12 +65,12 @@ export default defineConfig({
         display: 'standalone',
         icons: [
           {
-            src: './android-chrome-192x192.png',
+            src: '/android-chrome-192x192.png',
             sizes: '192x192',
             type: 'image/png'
           },
           {
-            src: './android-chrome-512x512.png',
+            src: '/android-chrome-512x512.png',
             sizes: '512x512',
             type: 'image/png'
           }

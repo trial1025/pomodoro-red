@@ -83,7 +83,7 @@ const finishTimer = () => {
     const { show, isSupported } = useWebNotification({
       title: '事項完成',
       body: currentItem.value,
-      icon: new URL('@/assets/tomato.png', import.meta.url).href
+      icon: new URL('@/assets/apple.png', import.meta.url).href
     })
     if (isSupported.value) {
       show()
