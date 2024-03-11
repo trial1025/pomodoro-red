@@ -71,6 +71,13 @@ export const useListStore = defineStore('list', {
       const i = this.finishedItems.findIndex(item => item.id === id)
       if (i < 0) return
       this.finishedItems.splice(i, 1)
+    },
+    completeItem (id) {
+      const index = this.items.findIndex(item => item.id === id)
+      if (index !== -1) {
+        const item = this.items.splice(index, 1)[0]
+        this.finishedItems.push(item)
+      }
     }
   },
   persist: {

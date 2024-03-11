@@ -1,27 +1,32 @@
 <template>
   <v-container>
-    <v-row style="background-color:#d4c0ba72; border-radius: 20px;width: 60%;margin: auto;margin-top: 10%;">
-      <v-col cols="12" class="text-center text-white">
-        <h1>{{ currentText }}</h1>
-        <h1>{{ currentTime }}</h1>
-      </v-col>
-      <v-col cols="12" class="text-center">
-        <!-- 按钮 -->
-        <v-btn
-          variant="text" icon="mdi-play"
-          :disabled="status === STATUS.COUNTING || (currentItem.length === 0 && items.length === 0)"
-          @click="startTimer"
-        ></v-btn>
-        <v-btn
-          variant="text" icon="mdi-pause" :disabled="status !== STATUS.COUNTING"
-          @click="pauseTimer"
-        ></v-btn>
-        <v-btn
-          variant="text" icon="mdi-skip-next" :disabled="currentItem.length === 0"
-          @click="finishTimer"
-        ></v-btn>
+    <v-row>
+      <v-col lg="6" md="6" sm="10" class="listbg my-12">
+        <v-col cols="12" class="text-center text-white">
+          <h1>{{ currentText }}</h1>
+          <h1 class="currenttime">{{ currentTime }}</h1>
+        </v-col>
+        <v-col cols="12" class="text-center">
+          <!-- 按钮 -->
+          <v-btn
+            variant="text" icon="mdi-play"
+            :disabled="status === STATUS.COUNTING || (currentItem.length === 0 && items.length === 0)"
+            @click="startTimer"
+          ></v-btn>
+          <v-btn
+            variant="text" icon="mdi-pause" :disabled="status !== STATUS.COUNTING"
+            @click="pauseTimer"
+          ></v-btn>
+          <v-btn
+            variant="text" icon="mdi-skip-next" :disabled="currentItem.length === 0"
+            @click="finishTimer"
+          ></v-btn>
+        </v-col>
       </v-col>
     </v-row>
+    <!-- <v-col cols="10" class="mx-auto">
+      <v-divider :thickness="3"></v-divider>
+    </v-col> -->
   </v-container>
 </template>
 
@@ -113,3 +118,15 @@ const currentTime = computed(() => {
   return m + ':' + s
 })
 </script>
+
+<style>
+.currenttime {
+  font-size: 8rem;
+}
+
+.listbg{
+  background-color:#ffffff43;
+  border-radius: 20px;
+  margin: auto;
+}
+</style>
